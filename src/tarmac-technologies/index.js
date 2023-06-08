@@ -10,16 +10,16 @@ const backofficeCriticalPath = require('./backoffice/critical_path');
   const hostname = window.location.hostname;
   const pathname = window.location.pathname;
 
-  if (RegExp('^(?:dev-)?backoffice.tarmactechnologies.com$').test(hostname)) {
+  if (/^(?:dev-)?backoffice.tarmactechnologies.com$/.test(hostname)) {
     if (
-      RegExp('^/turnaround_close_report/new').test(pathname) ||
-      RegExp('^/turnaround_close_report/[0-9]+/edit').test(pathname)
+      /^\/turnaround_close_report\/new/.test(pathname) ||
+      /^\/turnaround_close_report\/[0-9]+\/edit/.test(pathname)
     ) {
       backofficeReport();
     }
 
     if (
-      RegExp('^/(?:specific_)?critical_path/(?:[0-9]+/)?(?:edit|add|new)').test(
+      /^\/(?:specific_)?critical_path\/(?:[0-9]+\/)?(?:edit|add|new)/.test(
         pathname
       )
     ) {
@@ -27,21 +27,15 @@ const backofficeCriticalPath = require('./backoffice/critical_path');
     }
   }
 
-  if (RegExp('^(?:dev-)?admin.tarmactechnologies.com$').test(hostname)) {
-    if (RegExp('^/users/customuser/[0-9]+/change').test(pathname)) {
+  if (/^(?:dev-)?admin.tarmactechnologies.com$/.test(hostname)) {
+    if (/^\/users\/customuser\/[0-9]+\/change/.test(pathname)) {
       adminUsers();
     }
   }
 
-  if (hostname === 'agoa.tarmactechnologies.com') {
-    if (RegExp('^/agoa$').test(pathname)) {
+  if (/(?:dev-)?agoa.tarmactechnologies.com/.test(hostname)) {
+    if (/^\/(?:agoa)?$/.test(pathname)) {
       agoa();
-    }
-  }
-
-  if (hostname === 'dev-agoa.tarmactechnologies.com') {
-    if (RegExp('^/agoa$').test(pathname)) {
-      agoa('dev-admin');
     }
   }
 })();
