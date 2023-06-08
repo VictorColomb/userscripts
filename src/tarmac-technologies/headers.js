@@ -1,13 +1,13 @@
 module.exports = {
   name: 'Tarmac Technologies',
-  version: '1.3.0',
+  version: '2.0.0',
   description: 'Miscellaneous Tarmac Technologies Utilities',
   author: 'Victor Colomb',
   icon: 'https://static-tarmac.s3.amazonaws.com/img/favicon.ico',
   updateURL:
-    'https://gist.github.com/VictorColomb/caa742ae6887e2829b7e3c23a355deb5/raw/218678026e00586c481d3f77b8b3c22c66bf9c15/tarmac_technologies.user.js',
+    'https://github.com/VictorColomb/userscripts/raw/main/dist/tarmac-technologies.meta.js',
   downloadURL:
-    'https://gist.github.com/VictorColomb/caa742ae6887e2829b7e3c23a355deb5/raw/218678026e00586c481d3f77b8b3c22c66bf9c15/tarmac_technologies.user.js',
+    'https://github.com/VictorColomb/userscripts/raw/main/dist/tarmac-technologies.user.js',
 
   match: [
     'https://backoffice.tarmactechnologies.com/*',
