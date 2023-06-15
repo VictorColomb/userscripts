@@ -65,9 +65,7 @@ function processAdminUser() {
         option => option.label === u
       );
       if (option === undefined) {
-        console.error(
-          `[TT Userscript] Could not find business group ${u}`
-        );
+        console.error(`[TT Userscript] Could not find business group ${u}`);
       } else {
         option.selected = true;
       }

@@ -10,9 +10,7 @@ function processBackofficeReport() {
     )
     .iterateNext();
   if (!header) {
-    console.error(
-      '[TT Userscript] Task Timings section not found'
-    );
+    console.error('[TT Userscript] Task Timings section not found');
     return;
   }
 
@@ -29,9 +27,7 @@ function processBackofficeReport() {
       )
       .iterateNext();
     if (!section) {
-      console.error(
-        '[TT Userscript] Task Timings section not found'
-      );
+      console.error('[TT Userscript] Task Timings section not found');
       return;
     }
 

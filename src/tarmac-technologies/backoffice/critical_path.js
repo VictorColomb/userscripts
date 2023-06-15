@@ -68,9 +68,7 @@ function processBackofficeCriticalPath() {
           option => option.label.toLowerCase() === label.toLowerCase()
         );
         if (label_option === undefined) {
-          console.warn(
-            `[TT Userscript] Could not find label ${label}`
-          );
+          console.warn(`[TT Userscript] Could not find label ${label}`);
         } else {
           label_option.selected = true;
         }
@@ -87,9 +85,7 @@ function processBackofficeCriticalPath() {
           option => option.label.toLowerCase() === type.toLowerCase()
         );
         if (type_option === undefined) {
-          console.warn(
-            `[TT Userscript] Could not find type ${type}`
-          );
+          console.warn(`[TT Userscript] Could not find type ${type}`);
         } else {
           type_option.selected = true;
         }

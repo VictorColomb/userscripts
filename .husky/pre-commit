@@ -1,6 +1,18 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+diff=false
+if [[ -n $(git diff --cached src/) ]]
+then
+  diff=true
+  git stash push -uqk -m "Pre-commit hook stash" src/
+fi
+
 rm -rf dist/*
 yarn prod
 git add -A -- dist/
+
+if [[ "$diff"=true ]]
+then
+  git stash pop
+fi
