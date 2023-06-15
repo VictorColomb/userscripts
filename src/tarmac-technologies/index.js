@@ -2,6 +2,7 @@ const adminUsers = require('./admin/users');
 const agoa = require('./agoa/turnarounds');
 const backofficeReport = require('./backoffice/report');
 const backofficeCriticalPath = require('./backoffice/critical_path');
+const backofficeUsers = require('./backoffice/users');
 
 (function () {
   'use strict';
@@ -24,6 +25,10 @@ const backofficeCriticalPath = require('./backoffice/critical_path');
       )
     ) {
       backofficeCriticalPath();
+    }
+
+    if (/\/users/i.test(pathname)) {
+      backofficeUsers(/^dev-backoffice/.test(hostname) ? 'dev-admin' : 'admin');
     }
   }
 
