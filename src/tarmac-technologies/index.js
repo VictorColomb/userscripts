@@ -1,6 +1,5 @@
 const adminUsers = require('./admin/users');
 const agoa = require('./agoa/turnarounds');
-const backofficeReport = require('./backoffice/report');
 const backofficeCriticalPath = require('./backoffice/critical_path');
 const backofficeUsers = require('./backoffice/users');
 
@@ -12,13 +11,6 @@ const backofficeUsers = require('./backoffice/users');
   const pathname = window.location.pathname;
 
   if (/^(?:dev-)?backoffice.tarmactechnologies.com$/.test(hostname)) {
-    if (
-      /^\/turnaround_close_report\/new/.test(pathname) ||
-      /^\/turnaround_close_report\/[0-9]+\/edit/.test(pathname)
-    ) {
-      backofficeReport();
-    }
-
     if (
       /^\/(?:specific_)?critical_path\/(?:[0-9]+\/)?(?:edit|add|new)/.test(
         pathname
