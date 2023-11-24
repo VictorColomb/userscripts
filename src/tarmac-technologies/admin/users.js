@@ -103,6 +103,7 @@ function processAdminUserBusinessGroups() {
       }
     }
 
+    // Create and fill popup
     const popup = window.open('', '', 'width=800, height=400, scrollbars=yes');
     popup.document.title = `${username} | Business Groups`;
     popup.document.body.innerHTML = `<label for="airlines" style="display: block;">Airlines</label><input type="text" name="airlines" id="airlines" value="${airlines.join(
@@ -119,6 +120,7 @@ function processAdminUserBusinessGroups() {
     )}" style="width: 100%; margin-bottom: 15px;" /><br>`;
     popup.document.body.innerHTML += '<button id="submit">Submit</button>';
 
+    // Bind submit button
     popup.document.querySelector('#submit').addEventListener('click', () => {
       handleSubmit(
         popup.document.querySelector('#airlines').value.split(/[ ,]+/),
@@ -131,8 +133,19 @@ function processAdminUserBusinessGroups() {
       popup.close();
     });
 
+    // Close popup when the main window is closed
     window.addEventListener('beforeunload', () => {
       popup.close();
+    });
+
+    // Ctrl+Enter & Escape shortcuts
+    popup.document.addEventListener('keydown', event => {
+      if (event.ctrlKey && event.key === 'Enter') {
+        popup.document.querySelector('#submit').click();
+      }
+      if (event.key === 'Escape') {
+        popup.close();
+      }
     });
   });
 
@@ -160,7 +173,7 @@ function processAdminUserCompanyBusinessGroups() {
       cbg = cbg
         .trim()
         .toUpperCase()
-        .match(/([A-Z]{2}).*([A-Z]{3})/);
+        .match(/([A-Z0-9]{2}).*([A-Z]{3})/);
       if (!cbg) continue;
       cbg = `${cbg[1]} - ${cbg[2]}`;
 
@@ -194,8 +207,19 @@ function processAdminUserCompanyBusinessGroups() {
       popup.close();
     });
 
+    // Close popup when the main window is closed
     window.addEventListener('beforeunload', () => {
       popup.close();
+    });
+
+    // Ctrl+Enter & Escape shortcuts
+    popup.document.addEventListener('keydown', event => {
+      if (event.ctrlKey && event.key === 'Enter') {
+        popup.document.querySelector('#submit').click();
+      }
+      if (event.key === 'Escape') {
+        popup.close();
+      }
     });
   });
 
