@@ -1,6 +1,6 @@
 module.exports = {
   name: 'Tarmac Technologies',
-  version: '2.2.0',
+  version: '2.3.0',
   description: 'Miscellaneous Tarmac Technologies Utilities',
   author: 'Victor Colomb',
   icon: 'https://static-tarmac.s3.amazonaws.com/img/favicon.ico',

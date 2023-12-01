@@ -150,8 +150,6 @@ function processAdminUserBusinessGroups() {
   });
 
   label.style = 'cursor: pointer; user-select: none;';
-
-  console.log('[TT Userscript] Users module loaded');
 }
 
 function processAdminUserCompanyBusinessGroups() {
@@ -229,6 +227,8 @@ function processAdminUserCompanyBusinessGroups() {
 function processAdminUser() {
   processAdminUserBusinessGroups();
   processAdminUserCompanyBusinessGroups();
+
+  console.log('[TT Userscript] Users module loaded');
 }
 
 module.exports = processAdminUser;

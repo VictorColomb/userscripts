@@ -1,3 +1,4 @@
+const adminPartnerTaskRules = require('./admin/partnertaskrules');
 const adminUsers = require('./admin/users');
 const agoa = require('./agoa/turnarounds');
 const backofficeCriticalPath = require('./backoffice/critical_path');
@@ -27,6 +28,12 @@ const backofficeUsers = require('./backoffice/users');
   if (/^(?:dev-)?admin.tarmactechnologies.com$/.test(hostname)) {
     if (/^\/users\/customuser\/[0-9]+\/change/.test(pathname)) {
       adminUsers();
+    }
+
+    console.log('here');
+    if (/^\/tarmac\/partnertaskrule\/[0-9]+\/change/.test(pathname)) {
+      console.log('hear hear');
+      adminPartnerTaskRules();
     }
   }
 

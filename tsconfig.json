@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "declaration": true,
@@ -19,5 +20,5 @@
     "target": "es2018"
   },
   "exclude": [".yarn"],
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["src/"]
 }
