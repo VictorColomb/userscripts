@@ -1,3 +1,4 @@
+const adminCompanies = require('./admin/companies');
 const adminPartnerTaskRules = require('./admin/partnertaskrules');
 const adminUsers = require('./admin/users');
 const agoa = require('./agoa/turnarounds');
@@ -30,7 +31,10 @@ const backofficeUsers = require('./backoffice/users');
       adminUsers();
     }
 
-    console.log('here');
+    if (/^\/tarmac\/company\/(?:[0-9]+\/change|add)/.test(pathname)) {
+      adminCompanies();
+    }
+
     if (/^\/tarmac\/partnertaskrule\/[0-9]+\/change/.test(pathname)) {
       console.log('hear hear');
       adminPartnerTaskRules();
