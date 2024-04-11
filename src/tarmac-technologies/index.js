@@ -43,7 +43,7 @@ const backofficeUsers = require('./backoffice/users');
 
   if (/(?:dev-)?agoa.tarmactechnologies.com/.test(hostname)) {
     if (/^\/(?:agoa)?$/.test(pathname)) {
-      agoa();
+      agoa(/^dev-agoa/.test(hostname) ? 'dev-admin' : 'admin');
     }
   }
 })();

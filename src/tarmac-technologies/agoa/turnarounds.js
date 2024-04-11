@@ -2,12 +2,12 @@ function processAgoa(subdomain = 'admin') {
   function tick() {
     Array.from(
       document.querySelectorAll(
-        '[id^="turnaroundDetailHeaderHubAirportIataCode"]'
+        '[id^="turnaroundDetailHeaderTurnaroundActualAirport"]'
       )
     ).forEach(turnaround => {
       if (!turnaround.dataset.processed) {
         const id = turnaround.id.match(
-          /turnaroundDetailHeaderHubAirportIataCode([0-9]+)/
+          /turnaroundDetailHeaderTurnaroundActualAirport([0-9]+)/
         )[1];
         turnaround.addEventListener('click', () => {
           window.open(
