@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Tarmac Technologies
 // @description Miscellaneous Tarmac Technologies Utilities
-// @version 2.4.1
+// @version 2.4.2
 // @author Victor Colomb
 // @match https://backoffice.tarmactechnologies.com/*
 // @match https://dev-backoffice.tarmactechnologies.com/*

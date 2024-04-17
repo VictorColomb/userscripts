@@ -35,7 +35,7 @@ const backofficeUsers = require('./backoffice/users');
       adminCompanies();
     }
 
-    if (/^\/tarmac\/partnertaskrule\/[0-9]+\/change/.test(pathname)) {
+    if (/^\/tarmac\/partnertaskrule\/(?:add|[0-9]+\/change)/.test(pathname)) {
       console.log('hear hear');
       adminPartnerTaskRules();
     }
